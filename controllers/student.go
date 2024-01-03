@@ -59,15 +59,6 @@ func HandleDeleteStudent(c *gin.Context) {
 	id := c.Params.ByName("id")
 	database.DB.Delete(&student, id)
 
-	if student.ID == 0 {
-		c.JSON(http.StatusNotFound, gin.H{
-			"message":   "Student not found",
-			"errorCode": "404",
-		})
-
-		return
-	}
-
 	c.JSON(http.StatusOK, gin.H{
 		"id":      id,
 		"message": "Student deleted successfully",
