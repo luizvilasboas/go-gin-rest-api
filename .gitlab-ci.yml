@@ -12,6 +12,7 @@ build:
 test:
   stage: test
   script:
+    - docker-compose up
     - go test ./...
   tags:
     - golang
