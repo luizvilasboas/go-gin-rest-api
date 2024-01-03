@@ -43,6 +43,13 @@ func HandleCreateStudent(c *gin.Context) {
 		return
 	}
 
+	if err := models.ValidateStudentData(&student); err != nil {
+		c.JSON(400, gin.H{
+			"message":   err.Error(),
+			"errorCode": "400",
+		})
+	}
+
 	database.DB.Create(&student)
 	c.JSON(http.StatusOK, student)
 }
@@ -79,6 +86,13 @@ func HandleUpdateStudent(c *gin.Context) {
 		})
 
 		return
+	}
+
+	if err := models.ValidateStudentData(&student); err != nil {
+		c.JSON(400, gin.H{
+			"message":   err.Error(),
+			"errorCode": "400",
+		})
 	}
 
 	database.DB.Model(&student).UpdateColumns(student)
