@@ -1,0 +1,17 @@
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script:
+    - go build
+  tags:
+    - golang
+
+test:
+  stage: test
+  script:
+    - go test ./...
+  tags:
+    - golang
