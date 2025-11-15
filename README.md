@@ -1,41 +1,71 @@
 # go-gin-rest-api
 
-This project was developed as part of the Go programming language training at Alura. It involves the creation of a REST API using `Gin` and `GORM`. Also, I'm using `testify` to test and mock the API. 
+> A REST API built with Go, Gin, and GORM, developed as part of an Alura training course.
 
-# Dependencies
+## About the Project
 
-To ensure smooth operation of serenatto, make sure you have the following dependencies installed:
+This project is a REST API developed to practice Go, using the Gin framework for routing and the GORM library for database interaction. It also includes unit tests and mocks using the Testify library. The entire environment is containerized with Docker Compose.
 
-- Go (version 1.21)
-- Docker Compose (version 1.29)
+## Tech Stack
 
-# Usage
+*   [Go](https://golang.org/)
+*   [Gin](https://gin-gonic.com/)
+*   [GORM](https://gorm.io/)
+*   [Testify](https://github.com/stretchr/testify) (for testing)
+*   [PostgreSQL](https://www.postgresql.org/)
+*   [Docker Compose](https://docs.docker.com/compose/)
+*   [Air](https://github.com/cosmtrek/air) (for live reloading)
 
-1. After installing `go`, clone the project and navigate to the project directory with the following commands:
-```
-git clone https://github.com/luizvilasboas/go-gin-rest-api.git
-cd go-gin-rest-api
-```
+## Usage
 
-2. Install all dependencies required to run the project, especially `air`:
-```
-go mod tidy
-```
+Below are the instructions for you to set up and run the project locally.
 
-3. Run the `docker-compose` to set up and host a `PostgreSQL` server in a container:
-```
-docker-compose up
-```
+### Prerequisites
 
-4. Run the project and open `localhost:8080` in your browser using the following command:
-```
+You need to have the following software installed:
+
+*   [Go](https://golang.org/dl/) (version 1.21 or higher)
+*   [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/)
+*   [Air](https://github.com/cosmtrek/air#installation) (for development)
+
+### Installation and Setup
+
+Follow the steps below:
+
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/luizvilasboas/go-gin-rest-api.git
+    ```
+
+2.  **Navigate to the project directory**
+    ```bash
+    cd go-gin-rest-api
+    ```
+
+3.  **Install Go dependencies**
+    ```bash
+    go mod tidy
+    ```
+
+4.  **Start the database container**
+    ```bash
+    docker-compose up -d
+    ```
+
+### Workflow
+
+To run the project with live reloading, use `air`:
+```bash
 air
 ```
+The API will be available at `http://localhost:8080`.
 
 ## Contributing
 
-If you wish to contribute to this project, feel free to open a merge request. We welcome all forms of contribution!
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request.
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/luizvilasboas/go-gin-rest-api/blob/main/LICENSE). Refer to the LICENSE file for more details.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
